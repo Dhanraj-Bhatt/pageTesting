@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Forum&display=swap");
+
+:root {
+  --bg: #f6f1e7;
+  --bg-muted: #efe7da;
+  --text: #1f1a15;
+  --accent: #7a5c39;
+  --accent-dark: #5b4327;
+  --border: rgba(31, 26, 21, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Crimson Text", "Times New Roman", serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #f6f1e7 0%, #f2e9da 45%, #f7f0e5 100%);
+  line-height: 1.6;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 8vw;
+  background: rgba(246, 241, 231, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-family: "Forum", "Times New Roman", serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav a:hover::after,
+.nav a:focus::after {
+  transform: scaleX(1);
+}
+
+.hero {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 8vw;
+}
+
+.hero-inner {
+  max-width: 720px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: "Forum", "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid var(--accent-dark);
+  color: #fff;
+  background: var(--accent-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+  background: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-dark);
+}
+
+.section {
+  padding: 4rem 8vw;
+  scroll-margin-top: 70px;
+}
+
+.section-muted {
+  background: var(--bg-muted);
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-family: "Forum", "Times New Roman", serif;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.details-grid h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: #fff8ef;
+  box-shadow: 0 12px 24px rgba(31, 26, 21, 0.08);
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  font-style: italic;
+  background: #fffdf8;
+  padding: 1.5rem;
+  box-shadow: 0 10px 18px rgba(31, 26, 21, 0.08);
+}
+
+blockquote span {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 520px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  background: #fff;
+}
+
+.footer {
+  padding: 2rem 8vw;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: #f3eadb;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
