@@ -173,26 +173,93 @@ body {
   box-shadow: 0 12px 24px rgba(31, 26, 21, 0.08);
 }
 
+.reviews-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
   gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-blockquote {
-  border-left: 2px solid var(--accent);
-  padding-left: 1rem;
+.reviews::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.reviews .card {
+  flex: 0 0 300px; /* Give a fixed width to each review card */
+}
+
+.reviews .card h3 {
+  font-family: "Crimson Text", "Times New Roman", serif;
   font-style: italic;
-  background: #fffdf8;
-  padding: 1.5rem;
-  box-shadow: 0 10px 18px rgba(31, 26, 21, 0.08);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
-blockquote span {
-  display: block;
-  margin-top: 1rem;
+.reviews .card p {
   font-style: normal;
   font-weight: 600;
+  text-align: right;
+  color: var(--accent-dark);
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: var(--accent-dark); /* Themed background */
+  border: none; /* No border for a cleaner look */
+  border-radius: 50%;
+  width: 45px; /* Slightly larger buttons */
+  height: 45px;
+  cursor: pointer;
+  font-size: 1.6rem; /* Slightly larger arrow */
+  color: #fff; /* White arrows */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.scroll-btn:hover {
+  background: var(--accent); /* Lighter accent on hover */
+  transform: translateY(-50%) scale(1.05); /* Slight scale on hover */
+}
+
+.left-btn {
+  left: -20px; /* Adjust as needed */
+}
+
+.right-btn {
+  right: -20px; /* Adjust as needed */
+}
+
+@media (min-width: 1000px) { /* Adjust button position for larger screens */
+  .left-btn {
+    left: calc(50% - 500px - 50px); /* Aligned with section-inner edge minus button width and extra space */
+  }
+  .right-btn {
+    right: calc(50% - 500px - 50px); /* Aligned with section-inner edge minus button width and extra space */
+  }
+}
+
+@media (max-width: 1000px) { /* Adjust button position for smaller screens */
+  .left-btn {
+    left: 2vw; /* Use viewport width for responsiveness */
+  }
+  .right-btn {
+    right: 2vw; /* Use viewport width for responsiveness */
+  }
 }
 
 .contact-form {
