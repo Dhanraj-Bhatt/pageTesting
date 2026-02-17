@@ -216,6 +216,28 @@ blockquote span {
   background: #f3eadb;
 }
 
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+  background: #25d366; /* WhatsApp green */
+  border-color: #25d366;
+  color: #fff;
+}
+
+.whatsapp-btn:hover,
+.whatsapp-btn:focus {
+  background: #1da851; /* Darker green on hover */
+  border-color: #1da851;
+}
+
+.whatsapp-btn svg {
+  width: 1.2em; /* Adjust icon size */
+  height: 1.2em;
+  fill: currentColor; /* Inherit color from parent */
+}
+
 @media (max-width: 700px) {
   .topbar {
     flex-direction: column;
