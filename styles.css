@@ -305,12 +305,36 @@ body {
   fill: currentColor; /* Inherit color from parent */
 }
 
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.btn-signup {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-signup:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
 @media (max-width: 700px) {
   .topbar {
     flex-direction: column;
     gap: 0.75rem;
   }
-
+.auth-buttons {
+    margin-top: 0.5rem;
+  }
   .nav {
     flex-wrap: wrap;
     justify-content: center;

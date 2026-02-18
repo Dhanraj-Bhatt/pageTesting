@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up - JaiBhole 3D Printing Services</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <a href="index.html" style="text-decoration: none; color: inherit"
+          >JaiBhole 3D Printing Services</a
+        >
+      </div>
+      <nav class="nav">
+        <a href="index.html#about" data-scroll>About</a>
+        <a href="index.html#projects" data-scroll>Projects</a>
+        <a href="index.html#reviews" data-scroll>Reviews</a>
+        <a href="index.html#contact" data-scroll>Contact</a>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-login">Login</a>
+          <a href="signup.html" class="btn btn-signup">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="auth-main">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>Create an Account</h2>
+          <p>Join us to start your 3D printing journey.</p>
+          <form id="signup-form" class="auth-form">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-auth">Create Account</button>
+          </form>
+          <div class="auth-divider">
+            <span>OR</span>
+          </div>
+          <div class="provider-buttons">
+            <button id="google-signup" class="btn btn-provider btn-google">
+              Sign up with Google
+            </button>
+            <button id="phone-signup" class="btn btn-provider btn-phone">
+              Sign up with Phone
+            </button>
+          </div>
+          <div id="recaptcha-container"></div>
+          <div class="auth-switch">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span
+        >© 2026 JaiBhole 3D Printing Services. All rights reserved.</span
+      >
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>
